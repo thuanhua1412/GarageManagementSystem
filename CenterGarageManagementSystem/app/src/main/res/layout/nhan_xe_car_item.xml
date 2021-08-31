@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="serviceItem"
+            type="com.example.centergaragemanagementsystem.dataClass.Service" />
+        <variable
+            name="car"
+            type="com.example.centergaragemanagementsystem.dataClass.Car" />
+        <variable
+            name="clickListener"
+            type="com.example.centergaragemanagementsystem.adapter.ServiceClickListener" />
+        <variable
+            name="confirmClick"
+            type="com.example.centergaragemanagementsystem.adapter.ServiceClickListener" />
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/btnConfirm"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="51dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="50dp"
+            android:backgroundTint="#232222"
+            android:onClick="@{() -> confirmClick.onClick(serviceItem)}"
+            android:padding="5dp"
+            android:text="Xác Nhận"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/btnCancle"
+            app:layout_constraintTop_toBottomOf="@+id/spinner" />
+
+        <Button
+            android:id="@+id/btnCancle"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="#232222"
+            android:padding="5dp"
+            android:text="Hủy dịch vụ"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/spinner" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5sp"
+            android:onClick="@{() -> clickListener.onClick(serviceItem)}"
+            app:cardBackgroundColor="#080C0C"
+            app:cardCornerRadius="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/car_image_view"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="45dp"
+                    android:contentDescription="@string/car_image"
+                    android:src="@{car.carImageURI}"
+
+                    app:error="@{@drawable/car}" />
+
+                <TextView
+                    android:id="@+id/biensoxe"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="40dp"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Biển số xe"
+                    android:textColor="#FFFFFF"
+                    android:textSize="10dp" />
+
+                <TextView
+                    android:id="@+id/registration_plate_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="25dp"
+                    android:text="@{serviceItem.carServiced}"
+                    android:textColor="#fc0807"
+                    android:textSize="16dp" />
+
+                <TextView
+                    android:id="@+id/thoigianbatdau"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="120dp"
+                    android:layout_marginTop="55dp"
+                    android:text="Thời gian bắt đầu:"
+                    android:textColor="#FFFFFF"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/service_paid_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="19dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_margin="5dp"
+                    android:layout_marginEnd="177dp"
+                    android:layout_marginRight="177dp"
+                    android:layout_toStartOf="@+id/service_status"
+                    android:layout_toLeftOf="@+id/service_status"
+                    android:text="Đã thanh toán"
+                    android:textColor="@color/reddish_button_color"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:visibility="@{serviceItem.paid == true ? View.VISIBLE : View.GONE }" />
+
+                <ImageView
+                    android:id="@+id/service_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_gravity="end"
+                    android:layout_margin="7dp"
+                    android:layout_marginEnd="260dp"
+                    android:layout_marginRight="260dp"
+                    android:src="@drawable/status_waiting_approval"
+                    tools:src="@drawable/status_waiting_approval" />
+
+                <TextView
+                    android:id="@+id/service_name_text"
+                    android:layout_width="140dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="180dp"
+                    android:layout_marginTop="55dp"
+                    android:layout_marginEnd="30dp"
+                    android:text="@{serviceItem.carArriveTime}"
+                    android:textColor="#FFFFFF"
+                    android:textSize="14sp"
+                    android:textStyle="normal" />
+
+                <TextView
+                    android:id="@+id/picked_up_location_text"
+                    android:layout_width="140dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="185dp"
+                    android:layout_marginTop="78dp"
+                    android:layout_marginEnd="30dp"
+                    android:text="@{serviceItem.timeFinish}"
+                    android:textColor="#FFFFFF"
+                    android:textSize="14sp"
+                    android:textStyle="normal" />
+
+                <TextView
+                    android:id="@+id/service_time_start_text"
+                    android:layout_width="140dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="235dp"
+                    android:layout_marginTop="101dp"
+                    android:layout_marginEnd="30dp"
+                    android:text="@{serviceItem.pickUpLocation}"
+                    android:textColor="#FFFFFF"
+                    android:textSize="14sp"
+                    android:textStyle="normal" />
+
+                <TextView
+                    android:id="@+id/thoigianketthuc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="120dp"
+                    android:layout_marginTop="78dp"
+                    android:text="Thời gian kết thúc:"
+                    android:textColor="#FFFFFF"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/noinhan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="120dp"
+                    android:layout_marginTop="101dp"
+                    android:text="Nơi nhận:"
+                    android:textColor="#FFFFFF"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+        <Spinner
+            android:id="@+id/spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardView3" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

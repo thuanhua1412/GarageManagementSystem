@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="car"
+            type="com.example.centergaragemanagementsystem.dataClass.Car" />
+        <variable
+            name="serviceItem"
+            type="com.example.centergaragemanagementsystem.dataClass.Service" />
+        <variable
+            name="clickListener"
+            type="com.example.centergaragemanagementsystem.adapter.ServiceClickListener" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/background_color"
+        android:layout_marginStart="22dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        app:cardCornerRadius="37dp"
+        android:clickable="true"
+        android:onClick="@{() -> clickListener.onClick(serviceItem)}"
+        app:cardBackgroundColor="#303030">
+
+        <RelativeLayout
+            android:id="@+id/carItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:background="@color/background_color">
+
+            <ImageView
+                android:id="@+id/board"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:src="@drawable/board" />
+
+            <ImageView
+                android:id="@+id/carImage"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginStart="28dp"
+                android:layout_marginLeft="28dp"
+                android:layout_marginTop="42dp"
+                android:src="@{car.carImageURI}"
+                app:error="@{@drawable/car}"/>
+
+            <TextView
+                android:id="@+id/license_plate"
+                android:layout_width="80dp"
+                android:layout_height="24.5dp"
+                android:layout_marginLeft="42dp"
+                android:layout_marginTop="27dp"
+                android:fontFamily="Roboto"
+                android:textSize="13sp"
+                android:text="@{serviceItem.carServiced}"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:id="@+id/tvServiceName"
+                android:layout_width="217dp"
+                android:layout_height="21dp"
+                android:layout_marginLeft="149dp"
+                android:layout_marginTop="52dp"
+                android:fontFamily="Roboto"
+                android:text="@{`Khách hàng: ` + car.ownerID}"
+                android:textColor="@android:color/white"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/text_view2"
+                android:layout_width="217dp"
+                android:layout_height="42dp"
+                android:layout_marginLeft="149dp"
+                android:layout_marginTop="72dp"
+                android:fontFamily="Roboto"
+                android:text= "@{`Ngày nhận: ` +  serviceItem.carArriveTime}"
+                android:textColor="@android:color/white"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/text_view3"
+                android:layout_width="217dp"
+                android:layout_height="21dp"
+                android:layout_marginLeft="149dp"
+                android:layout_marginTop="105dp"
+                android:fontFamily="Roboto"
+                android:text="@{`Hãng xe: ` + car.type}"
+                android:textColor="@android:color/white"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/text_view4"
+                android:layout_width="217dp"
+                android:layout_height="46dp"
+                android:layout_marginLeft="149dp"
+                android:layout_marginTop="125dp"
+                android:fontFamily="Roboto"
+                android:text="@{`Thời gian hoàn thành: ` + serviceItem.timeFinish}"
+                android:textColor="@android:color/white"
+                android:textSize="12sp" />
+
+
+
+            <TextView
+                android:id="@+id/biensoxe"
+                android:layout_width="wrap_content"
+                android:layout_height="26dp"
+                android:layout_marginLeft="35dp"
+                android:layout_marginTop="7dp"
+                android:fontFamily="Roboto"
+                android:text="Biển số xe"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+
+            <RelativeLayout
+                android:id="@+id/frame_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="222dp"
+                android:layout_marginTop="13dp">
+
+
+                <ImageView
+                    android:id="@+id/statusImage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:src="@drawable/status_doing" />
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/detailLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="164dp"
+                android:layout_marginLeft="225dp">
+
+<!--                <Button-->
+<!--                    android:layout_width="116dp"-->
+<!--                    android:layout_height="26dp"-->
+<!--                    android:layout_gravity="center_horizontal|center"-->
+<!--                    android:layout_marginLeft="-1dp"-->
+<!--                    android:layout_marginTop="0dp"-->
+<!--                    android:fontFamily="Roboto"-->
+<!--                    android:gravity="center" />-->
+
+                <TextView
+                    android:id="@+id/detail"
+                    android:layout_width="116dp"
+                    android:layout_height="26dp"
+                    android:layout_gravity="center_horizontal|center"
+                    android:layout_marginLeft="-1dp"
+                    android:layout_marginTop="0dp"
+                    android:fontFamily="Roboto"
+                    android:gravity="center"
+                    android:visibility="visible" />
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

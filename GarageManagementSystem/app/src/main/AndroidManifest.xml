@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.dataclasses">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.GarageManagementSystem"
+        tools:replace="android:theme">
+        <activity android:name="customer.homepage.service.detail.ServiceDetailActivity"/>
+        <activity android:name="register.RegisterEndActivity" />
+        <activity android:name="customer.homepage.home.InfoServiceActivity" />
+        <activity android:name="customer.homepage.home.FranchiseActivity" />
+        <activity android:name="customer.homepage.home.GuideActivity" />
+        <activity android:name="customer.homepage.home.SaleActivity" />
+        <activity android:name="customer.homepage.home.InsuranceActivity" />
+        <activity
+            android:name="payment.MomoPaymentActivity"
+            android:label="@string/title_activity_momo_payment"
+            android:theme="@style/Theme.GarageManagementSystem.NoActionBar" />
+        <activity
+            android:name="appinfo.TermOfServicePage"
+            android:label="@string/title_activity_term_of_service_page"
+            android:theme="@style/Theme.GarageManagementSystem.NoActionBar" />
+        <activity
+            android:name="notification.ActivityNotificationPage"
+            android:label="@string/title_activity_notification_page"
+            android:theme="@style/Theme.GarageManagementSystem.NoActionBar" />
+        <activity android:name="process.Check_photo" />
+        <activity android:name="process.Process_Undo" />
+        <activity android:name="payment.Review_rate" />
+        <activity android:name="payment.Momo" />
+        <activity
+            android:name="customer.homepage.clientinfo.carinfo.cardetail.CarInfoActivity"
+            android:theme="@style/Theme.GarageManagementSystem" />
+        <activity android:name="customer.homepage.clientinfo.carinfo.AddCarActivity" />
+        <activity android:name="customer.homepage.clientinfo.carinfo.changeCarInfo" />
+        <activity android:name="customer.homepage.clientinfo.customerinfo.EditInfoActivity" />
+        <activity android:name="customer.homepage.clientinfo.carinfo.CarListActivity" />
+        <activity
+            android:name="payment.PaymentActivity"
+            android:label="@string/title_activity_payment"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity
+            android:name="payment.MomoPaymentStarterActivity"
+            android:label="@string/title_activity_payment"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity
+            android:name="register.RegisterActivity"
+            android:label="@string/title_activity_register"
+            android:theme="@style/Theme.GarageManagementSystem.NoActionBar" />
+        <activity
+            android:name="customer.homepage.HomeScreenActivity"
+            android:label="Trang Chủ"
+            android:theme="@style/Theme.GarageManagementSystem" />
+        <activity android:name="login.LoginActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+    </application>
+
+</manifest>

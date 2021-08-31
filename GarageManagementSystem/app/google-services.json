@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "683078241722",
+    "project_id": "autogaragemanagementsystem",
+    "storage_bucket": "autogaragemanagementsystem.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:683078241722:android:d9dab6ab8a9fb4525b6183",
+        "android_client_info": {
+          "package_name": "com.example.garagemanagementsystem"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "683078241722-pgmdv4b4kj5744jfp1afg6lhiu9mstt4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBNZIutG2HiyF4_IsEvTk_evyE6H37Zc-Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "683078241722-pgmdv4b4kj5744jfp1afg6lhiu9mstt4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

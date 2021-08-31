@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/navigation_home"
+        android:icon="@drawable/ic_baseline_house_24"
+        android:title="Trang chủ" />
+    <item
+        android:id="@+id/navigation_booking"
+        android:icon="@drawable/ic_baseline_calendar_today_24"
+        android:title="Đặt lịch" />
+    <item
+        android:id="@+id/navigation_services"
+        android:icon="@drawable/ic_baseline_update_24"
+        android:title="Dịch vụ" />
+    <item
+        android:id="@+id/navigation_client"
+        android:icon="@drawable/info_icon"
+        android:title="Quản lý" />
+
+</menu>

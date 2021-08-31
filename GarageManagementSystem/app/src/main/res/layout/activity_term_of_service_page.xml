@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color"
+    tools:context="appinfo.TermOfServicePage">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar"/>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="654dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+
+            <TextView
+                android:id="@+id/privacy_title"
+                style="@style/heading_app_info"
+                android:layout_marginTop="20sp"
+                android:text="Privacy Policy"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/privacy_detail"
+                style="@style/app_info_detail_elaboration"
+                android:text="@string/privacy_policy_text"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/privacy_title" />
+
+            <TextView
+                android:id="@+id/info_collect_title"
+                style="@style/heading_app_info"
+                android:text="@string/infomation_we_collect"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/privacy_detail" />
+
+            <TextView
+                android:id="@+id/info_collect_text"
+                style="@style/app_info_detail_elaboration"
+                android:text="@string/information_collected_detail"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/info_collect_title" />
+
+            <TextView
+                android:id="@+id/log_data_title"
+                style="@style/heading_app_info"
+                android:text="@string/log_data"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/info_collect_text" />
+
+            <TextView
+                android:id="@+id/log_data_text"
+                style="@style/app_info_detail_elaboration"
+                android:text="@string/when_you_visit_our_website_our_servers_may_automatically_log_the_standard_data_provided_by_your_web_browser_it_may_include_your_device_s_internet_protocol_ip_address_your_browser_type_and_version_the_pages_you_visit_the_time_and_date_of_your_visit_the_time_spent_on_each_page_other_details_about_your_visit_and_technical_details_that_occur_in_conjunction_with_any_errors_you_may_encounter_please_be_aware_that_while_this_information_may_not_be_personally_identifying_by_itself_it_may_be_possible_to_combine_it_with_other_data_to_personally_identify_individual_persons"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/log_data_title" />
+
+            <TextView
+                android:id="@+id/security_for_personal_data_title"
+                style="@style/heading_app_info"
+                android:text="@string/security_of_your_personal_information"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/log_data_text" />
+
+            <TextView
+                android:id="@+id/security_data_text"
+                style="@style/app_info_detail_elaboration"
+                android:text="@string/security_pesonale_data_text"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/security_for_personal_data_title" />
+
+            <TextView
+                android:id="@+id/contact_us_title"
+                style="@style/heading_app_info"
+                android:text="@string/contact_us"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/security_data_text" />
+
+            <TextView
+                android:id="@+id/contact_us_text"
+                style="@style/app_info_detail_elaboration"
+                android:layout_marginBottom="30dp"
+                android:text="@string/contact_us_text"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/contact_us_title" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

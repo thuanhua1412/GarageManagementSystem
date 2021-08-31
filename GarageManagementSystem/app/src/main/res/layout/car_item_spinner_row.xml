@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="carItem"
+            type="com.example.dataclasses.Car" />
+    </data>
+    <com.google.android.material.card.MaterialCardView xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        card_view:cardCornerRadius="5dp"
+        card_view:cardElevation="7dp"
+        card_view:cardUseCompatPadding="true"
+        tools:targetApi="lollipop"
+        >
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/cardview_dark_background"
+            android:layout_margin="8dp">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/biensoxe"
+                style="@style/material_text_style"
+                android:text="Biển số xe"
+                android:textSize="18sp"
+                android:textStyle="bold"
+
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/car_plate_id_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15sp"
+                android:layout_marginLeft="15sp"
+                android:text="@{carItem.registrationPlate}"
+                android:textColor="@color/reddish_button_color"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                tools:text="45X445112"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/biensoxe" />
+
+            <ImageView
+                android:id="@+id/carImage"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginStart="28dp"
+                android:layout_marginLeft="28dp"
+                android:src="@{carItem.carImageURI}"
+                tools:src="@drawable/car"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/car_plate_id_text"
+                app:error="@{@drawable/car}"/>
+
+    
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guide_line_below_plate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toBottomOf="@id/car_plate_id_text" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/car_type_title_text"
+                style="@style/material_text_style"
+                android:textSize="18sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hãng xe:"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@id/carImage"
+                app:layout_constraintTop_toBottomOf="@id/guide_line_below_plate" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/car_type_text"
+                style="@style/material_text_style"
+                android:textSize="18sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:text= "@{carItem.type}"
+                tools:text="Cambry"
+                app:layout_constraintStart_toEndOf="@id/car_type_title_text"
+                app:layout_constraintTop_toBottomOf="@id/guide_line_below_plate" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/pickup_location_title_text"
+                style="@style/material_text_style"
+                android:textSize="18sp"
+                android:text="Nơi nhận:"
+                android:textStyle="bold"
+
+                app:layout_constraintStart_toEndOf="@id/vertical_guideline"
+                app:layout_constraintTop_toBottomOf="@id/car_type_title_text" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/pickup_location_text"
+                style="@style/material_text_style"
+                android:textSize="18sp"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:text="Trung tâm 1"
+                app:layout_constraintStart_toEndOf="@id/pickup_location_title_text"
+                app:layout_constraintTop_toBottomOf="@id/car_type_title_text" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/car_description_title_text"
+                style="@style/material_text_style"
+                android:textSize="18sp"
+                android:text="Xe của:"
+                android:textStyle="bold"
+
+                app:layout_constraintStart_toEndOf="@id/vertical_guideline"
+                app:layout_constraintTop_toBottomOf="@id/pickup_location_title_text" />
+
+            <com.google.android.material.textview.MaterialTextView
+                style="@style/material_text_style"
+                android:textSize="18sp"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:text="@{carItem.ownerID}"
+                tools:text="Thinh"
+                app:layout_constraintStart_toEndOf="@id/car_description_title_text"
+                app:layout_constraintTop_toBottomOf="@id/pickup_location_title_text" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/vertical_guideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintStart_toEndOf="@id/carImage" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+</layout>

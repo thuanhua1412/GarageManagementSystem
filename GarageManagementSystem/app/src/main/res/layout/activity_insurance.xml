@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="customer.homepage.home.InsuranceActivity">
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar"/>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="654dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/what"
+                style="@style/heading_app_info"
+                android:layout_marginStart="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20sp"
+                android:text="Bảo hành điện tử là gì?"
+                android:textSize="25sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/what_detail"
+                style="@style/app_info_detail_elaboration"
+                android:text="Bảo hành điểm tử là hình thức bào hành phương tiện thông qua thiết bị cá nhân mà không cần trực tiếp đến trung tâm"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/what" />
+
+            <TextView
+                android:id="@+id/why"
+                style="@style/heading_app_info"
+                android:layout_marginStart="20dp"
+                android:layout_marginLeft="20dp"
+                android:text="Bảo hành điện tử có lợi gì?"
+                android:textSize="25sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/what_detail" />
+
+            <TextView
+                android:id="@+id/why_detail"
+                style="@style/app_info_detail_elaboration"
+                android:text="Bảo hành điện tử hỗ trợ khách hàng tham gia dịch vụ bảo hành một cách thuận tiện hơn, đơn giản. Khách hàng có thể bảo hành trực tuyến, trực tiếp theo dõi tiến trình sửa chữa nên giảm thời gian và chi phí đi lại cho khách hàng. Ngoài ra lịch sử bảo hành cũng được ghi lại cho phép khách hàng biết được nhựng dịch vụ mà mình đã sử dụng "
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/why" />
+
+            <TextView
+                android:id="@+id/how"
+                style="@style/heading_app_info"
+                android:layout_width="383dp"
+                android:layout_height="63dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginLeft="20dp"
+                android:text="Thực hiện bảo hành điện tử như thế nào?"
+                android:textSize="25sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/why_detail" />
+
+            <TextView
+                android:id="@+id/how_detail"
+                style="@style/app_info_detail_elaboration"
+                android:text="Thông qua ứng dụng, việc bảo hành điện tử rất đơn giản. Chỉ cần nhấn vào icon đặt dịch vụ, khách hàng đã có thể thực hiện dịch vụ bảo hành điện tử sau khi cung cấp đầy đủ thông tin cho trung tâm."
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/how" />
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="customer"
+            type="com.example.centergaragemanagementsystem.dataClass.Customer" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/background_color"
+        android:layout_marginStart="22dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        app:cardCornerRadius="37dp"
+        app:cardBackgroundColor="#303030">
+
+        <RelativeLayout
+            android:id="@+id/customerItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:background="@color/background_color">
+
+
+            <ImageView
+                android:id="@+id/board"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:src="@drawable/board" />
+
+            <ImageView
+                android:id="@+id/customerImage"
+
+                android:layout_width="100dp"
+                android:layout_height="120dp"
+                android:layout_marginStart="28dp"
+                android:layout_marginLeft="28dp"
+                android:layout_marginTop="45dp"
+                android:src="@{customer.avatarImageUri}"
+                app:error="@{@drawable/customer}"
+                />
+
+            <TextView
+                android:id="@+id/tvServiceName"
+                android:layout_width="217dp"
+                android:layout_height="21dp"
+                android:layout_marginLeft="149dp"
+                android:layout_marginTop="52dp"
+                android:fontFamily="Roboto"
+                android:text="@{@string/customerName(customer.name)}"
+                android:textColor="@android:color/white"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/text_view2"
+                android:layout_width="217dp"
+                android:layout_height="21dp"
+                android:layout_marginLeft="149dp"
+                android:layout_marginTop="72dp"
+                android:fontFamily="Roboto"
+                android:text="@{String.format(@string/customerPhone,customer.phone)}"
+                android:textColor="@android:color/white"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/text_view3"
+                android:layout_width="217dp"
+                android:layout_height="21dp"
+                android:layout_marginLeft="149dp"
+                android:layout_marginTop="92dp"
+                android:fontFamily="Roboto"
+                android:text="@{String.format(@string/numberOfServiceTime, Integer.toString(customer.numberOfServiceTime))}"
+                android:textColor="@android:color/white"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/text_view4"
+                android:layout_width="217dp"
+                android:layout_height="46dp"
+                android:layout_marginLeft="149dp"
+                android:layout_marginTop="112dp"
+                android:fontFamily="Roboto"
+                android:text="@{String.format(@string/customerRank, customer.rank)}"
+                android:textColor="@android:color/white"
+                android:textSize="12sp" />
+
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

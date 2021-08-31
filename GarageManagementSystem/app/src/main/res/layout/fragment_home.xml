@@ -1,0 +1,132 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="customer.homepage.home.HomeFragment">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/background_color">
+
+
+        <ImageView
+            android:id="@+id/garage_fake_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/garage_image"
+            android:src="@drawable/car_service_sunderland_1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/scroll_table_parent"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:layout_marginTop="16dp"
+            android:fillViewport="true"
+            android:orientation="vertical"
+            android:scrollbars="none"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/garage_fake_view"
+            app:layout_goneMarginBottom="80dp">
+
+            <TableLayout
+                android:id="@+id/table_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="30dp"
+                android:foregroundGravity="center_horizontal"
+                android:gravity="center_horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/car_insurance_button"
+                        style="@style/home_screen_button"
+                        android:drawableTop="@drawable/car_icon_home_screen"
+                        android:text="Bảo hành điện tử "
+                        app:backgroundTint="#1F1D1F"
+                        tools:layout_editor_absoluteX="161dp"
+                        tools:layout_editor_absoluteY="252dp"
+                        />
+
+                    <Button
+                        android:id="@+id/guide_line_homescreen"
+                        style="@style/home_screen_button"
+                        android:drawableTop="@drawable/guide_2"
+                        android:paddingTop="10dp"
+
+                        android:text="Hướng dẫn sử dụng"
+                        app:backgroundTint="#1F1D1F"
+                        tools:layout_editor_absoluteX="40dp"
+                        tools:layout_editor_absoluteY="258dp" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent">
+
+                    <Button
+                        android:id="@+id/sale_button"
+                        style="@style/home_screen_button"
+                        android:drawableTop="@drawable/tag_sale"
+                        android:paddingTop="24dp"
+                        app:backgroundTint="#1F1D1F"
+                        android:text="Các gói ưu đãi" />
+
+                    <Button
+                        android:id="@+id/garage_timeline"
+                        style="@style/home_screen_button"
+                        android:drawableTop="@drawable/calendar"
+                        app:backgroundTint="#1F1D1F"
+                        android:text="Các dịch vụ mới" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_horizontal">
+
+                    <Button
+                        android:id="@+id/service_info_button"
+                        style="@style/home_screen_button"
+                        app:backgroundTint="#1F1D1F"
+                        android:drawableTop="@drawable/services_info"
+                        android:text="Thông tin dịch vụ" />
+
+                    <Button
+                        android:id="@+id/franchise_button"
+                        style="@style/home_screen_button"
+                        app:backgroundTint="#1F1D1F"
+                        android:drawableTop="@drawable/franchise_sytem"
+                        android:text="Hệ thống đại lý" />
+                </TableRow>
+
+                <!--        <TableRow-->
+                <!--            android:layout_width="match_parent"-->
+                <!--            android:layout_height="match_parent" />-->
+            </TableLayout>
+        </androidx.core.widget.NestedScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+<!--    <com.google.android.material.bottomnavigation.BottomNavigationView-->
+<!--        android:id="@+id/bottom_nav_bar"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:foregroundGravity="bottom"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:menu="@menu/bottom_nav_menu" />-->
+</FrameLayout>

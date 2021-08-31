@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.centergaragemanagementsystem">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.CenterGarageManagementSystem">
+        <activity
+            android:name="login.LoginActivity"
+            android:theme="@style/Theme.CenterGarageManagementSystem.NoActionBar" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.ServiceListActivity"
+            android:theme="@style/Theme.CenterGarageManagementSystem.NoActionBar" />
+        <activity
+            android:name=".activity.RegisterActivity"
+            android:theme="@style/Theme.CenterGarageManagementSystem.NoActionBar" />
+        <activity
+            android:name=".activity.NhanXeCustomerInfoActivity"
+            android:theme="@style/Theme.CenterGarageManagementSystem.NoActionBar" />
+        <activity
+            android:name=".activity.NhanXeCarInfoActivity"
+            android:theme="@style/Theme.CenterGarageManagementSystem.NoActionBar" />
+        <activity
+            android:name=".activity.NhanXeActivity"
+            android:theme="@style/Theme.CenterGarageManagementSystem.NoActionBar" />
+        <activity
+            android:name=".activity.HomeActivity"
+            android:theme="@style/Theme.CenterGarageManagementSystem.NoActionBar" />
+        <activity
+            android:name=".activity.EmployeeInfoDetailActivity"
+            android:theme="@style/Theme.CenterGarageManagementSystem.NoActionBar" />
+        <activity
+            android:name=".activity.EmployeeInfoActivity"
+            android:theme="@style/Theme.CenterGarageManagementSystem.NoActionBar" />
+        <activity
+            android:name=".activity.CustomerListActivity"
+            android:theme="@style/Theme.CenterGarageManagementSystem.NoActionBar" />
+        <activity
+            android:name=".activity.ConfirmServiceActivity"
+            android:theme="@style/Theme.CenterGarageManagementSystem.NoActionBar" />
+        <activity
+            android:name=".activity.CarListActivity"
+            android:theme="@style/Theme.CenterGarageManagementSystem.NoActionBar" />
+        <activity
+            android:name=".activity.ArisingServiceActivity"
+            android:theme="@style/Theme.CenterGarageManagementSystem.NoActionBar" />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+    </application>
+
+</manifest>

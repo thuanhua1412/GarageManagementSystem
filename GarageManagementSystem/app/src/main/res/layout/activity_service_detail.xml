@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+
+        <variable
+            name="service"
+            type="com.example.dataclasses.Service" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="customer.homepage.service.detail.ServiceDetailActivity">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:id="@+id/service_info_box"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/filledTextField0"
+
+                    style="@style/material_edit_text_box"
+
+                    android:hint="Service Name">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/service_name_location_edit_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@{service.name}"
+                        tools:text="Thinh DEp TRai" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/filledTextField1"
+
+                    style="@style/material_edit_text_box"
+
+                    android:hint="Service For Car">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/car_registration_edit_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        tools:text="68X4545" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/filledTextField2"
+
+                    style="@style/material_edit_text_box"
+
+                    android:hint="Status">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/car_type_edit_text"
+                        android:text="@{service.status}"
+                        tools:text="Ferrari"
+                        style="@style/material_edit_text" />
+                </com.google.android.material.textfield.TextInputLayout>
+                <ProgressBar
+                    style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                    android:id="@+id/progress_bar"
+                    android:layout_width="350dp"
+                    android:layout_height="wrap_content"
+                    tools:progress="25"
+                    tools:progressTint="@color/reddish_button_color"
+                    android:layout_gravity="center_horizontal"
+                    />
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dp"
+                    android:text="Proof Images:"/>
+                <androidx.viewpager2.widget.ViewPager2
+                    android:id="@+id/viewpager"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/title_text">
+
+                </androidx.viewpager2.widget.ViewPager2>
+                <me.relex.circleindicator.CircleIndicator3
+                    android:id="@+id/indicator"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/viewpager" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/filledTextField3"
+
+                    style="@style/material_edit_text_box"
+
+                    android:hint="Car Arrive Time">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/car_owner_edit_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@{service.carArriveTime}"
+                        tools:text="Thinh DEp TRai" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/filledTextField4"
+
+                    style="@style/material_edit_text_box"
+
+                    android:hint="Pick Up Location">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/pick_up_location_edit_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@{service.pickUpLocation}"
+                        tools:text="Thinh DEp TRai" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/filledTextField6"
+
+                    style="@style/material_edit_text_box"
+
+                    android:hint="Description">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/description_edit_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@{service.description}"
+                        tools:text="Thinh DEp TRai" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/paid_box"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/filledTextField7"
+
+                        style="@style/material_edit_text_box"
+
+                        android:hint="Paid">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/paid_edit_text"
+                            android:layout_width="100dp"
+                            android:layout_height="55dp"
+                            android:layout_weight="1"
+                            android:text="@{Boolean.toString(service.paid)}"
+                            tools:text="Paid" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/filledTextField8"
+
+                        style="@style/material_edit_text_box"
+
+                        android:hint="Rework Request">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/rework_request_edit_text"
+                            android:layout_width="213dp"
+                            android:layout_height="55dp"
+                            android:layout_weight="1"
+                            android:text="@{service.description}"
+                            tools:text="True" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/filledTextField10"
+
+                    style="@style/material_edit_text_box"
+
+                    android:hint="Total Cost">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/cost_edit_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@{Integer.toString(service.cost)}"
+                        tools:text="111000$" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/pay_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_margin="24dp"
+                    android:text="@{service.paid == false ? `PAY` : `REWORK REQUEST`}"
+                    app:cornerRadius="10dp"
+                    tools:text="Pay" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone" />
+
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>

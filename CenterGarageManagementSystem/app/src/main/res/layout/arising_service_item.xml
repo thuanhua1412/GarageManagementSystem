@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+ <data>
+     <variable
+         name="position"
+         type="Integer" />
+     <variable
+         name="serviceItem"
+         type="com.example.centergaragemanagementsystem.dataClass.ServiceItem" />
+     <variable
+         name="clickListener"
+         type="com.example.centergaragemanagementsystem.adapter.ArisingServiceClickListener" />
+ </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_margin="6dp"
+        android:background="#018786">
+
+        <TextView
+            android:id="@+id/etCost"
+            android:layout_width="130dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="25dp"
+            android:text="@{Integer.toString(serviceItem.cost)}"
+            android:background="@drawable/rounded_corner"
+            android:gravity="center_horizontal"
+            android:textColor="@color/reddish_button_color"
+            android:textSize="30sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fake_view" />
+
+        <TextView
+            android:id="@+id/etServiceItemTimeLImit"
+            android:layout_width="250dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="25dp"
+            android:text="@{serviceItem.timeLimit}"
+            android:background="@drawable/rounded_corner"
+            android:gravity="center_horizontal"
+            android:textColor="@color/reddish_button_color"
+            android:textSize="30sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etServiceItemDescription" />
+
+        <TextView
+            android:id="@+id/etServiceItemName"
+            android:layout_width="250dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="25dp"
+            android:background="@drawable/rounded_corner"
+            android:gravity="center_horizontal"
+            android:text="@{serviceItem.name}"
+            android:textColor="@color/reddish_button_color"
+            android:textSize="30sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/etServiceItemDescription"
+            android:layout_width="250dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="25dp"
+            android:text="@{serviceItem.description}"
+            android:background="@drawable/rounded_corner"
+            android:gravity="center_horizontal"
+            android:textColor="@color/reddish_button_color"
+            android:textSize="30sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etServiceItemName" />
+
+        <TextView
+            android:id="@+id/service_description_title_text"
+            style="@style/car_item_title"
+
+            android:layout_marginStart="7dp"
+            android:layout_marginTop="35dp"
+            android:text="Description: "
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvServiceNameTitle" />
+
+        <TextView
+            android:id="@+id/time_limit_title_text"
+            style="@style/car_item_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="7dp"
+            android:layout_marginTop="35dp"
+            android:text="Time Limit:"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/service_description_title_text" />
+
+        <TextView
+            android:id="@+id/time_limit_text"
+            style="@style/car_item_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            app:layout_constraintBottom_toTopOf="@id/fake_view"
+            app:layout_constraintLeft_toRightOf="@+id/time_limit_title_text"
+            app:layout_constraintStart_toEndOf="@+id/time_limit_title_text" />
+
+        <TextView
+            android:id="@id/fake_view"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginBottom="13dp"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toTopOf="@id/service_cost_title_text"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/btnRemove"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="88dp"
+            android:layout_marginBottom="7dp"
+            android:backgroundTint="#232222"
+            android:onClick="@{() ->clickListener.onClick(position)}"
+            android:padding="5dp"
+            android:text="Remove"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/service_cost_title_text"
+            android:layout_width="58dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginBottom="17dp"
+            android:text="Cost: "
+            android:textColor="@color/white"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/btnRemove" />
+
+        <TextView
+            android:id="@+id/tvServiceNameTitle"
+            style="@style/car_item_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="7dp"
+            android:layout_marginTop="20dp"
+            android:text="Tên dịch vụ:"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

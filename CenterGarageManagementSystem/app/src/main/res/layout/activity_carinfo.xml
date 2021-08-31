@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="car"
+            type="com.example.centergaragemanagementsystem.dataClass.Car" />
+        <variable
+            name="service"
+            type="com.example.centergaragemanagementsystem.dataClass.Service" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background_color"
+        tools:context=".activity.ServiceListActivity">
+
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageCar"
+            android:layout_width="wrap_content"
+            android:layout_height="150dp"
+            android:src="@{car.carImageURI}"
+            app:error="@{@drawable/car}"
+            app:layout_constraintEnd_toEndOf="parent"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/licensePlateText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_medium"
+            android:text="@{`Biển số xe: ` + car.registrationPlate}"
+            android:textColor="@android:color/white"
+            android:textSize="18dp"
+            app:layout_constraintTop_toBottomOf="@id/imageCar"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="16dp" />
+
+        <TextView
+            android:id="@+id/pickUpLocation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:fontFamily="@font/roboto_medium"
+            android:text="@{`Nơi nhận xe: ` + service.pickUpLocation}"
+            android:textColor="@android:color/white"
+            android:textSize="18dp"
+            app:layout_constraintTop_toBottomOf="@id/licensePlateText"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="16dp" />
+
+        <TextView
+            android:id="@+id/pickUpTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:fontFamily="@font/roboto_medium"
+            android:text="@{`Thời gian nhận: `+ service.carArriveTime}"
+            android:textColor="@android:color/white"
+            android:textSize="18dp"
+            app:layout_constraintTop_toBottomOf="@id/pickUpLocation"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="16dp" />
+
+        <TextView
+            android:id="@+id/doneTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:fontFamily="@font/roboto_medium"
+            android:text="@{`Thời gian trả: ` + service.timeFinish}"
+            android:textColor="@android:color/white"
+            android:textSize="18dp"
+            app:layout_constraintTop_toBottomOf="@id/pickUpTime"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="16dp" />
+
+        <TextView
+            android:id="@+id/currentLocation"
+            android:layout_width="125dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:fontFamily="@font/roboto_medium"
+            android:text="@{`Km: ` + service.speedometer}"
+            android:textColor="@android:color/white"
+            android:textSize="18dp"
+            app:layout_constraintTop_toBottomOf="@id/doneTime"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="16dp" />
+
+        <TextView
+            android:id="@+id/serviceStatus"
+            android:layout_width="229dp"
+            android:layout_height="37dp"
+            android:layout_marginTop="1dp"
+            android:fontFamily="@font/roboto_medium"
+            android:text="Trạng thái các dịch vụ:"
+            android:textColor="@android:color/white"
+            android:textSize="18dp"
+            app:layout_constraintTop_toBottomOf="@id/currentLocation"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="16dp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/servicelistRecycleView"
+            android:layout_width="match_parent"
+            android:layout_height="350dp"
+            android:clipToPadding="false"
+            android:foregroundGravity="center"
+            android:padding="0dp"
+            android:layout_marginBottom="50dp"
+            app:layout_constraintTop_toBottomOf="@id/serviceStatus"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintVertical_bias="0.0"
+            tools:listitem="@layout/service_item_thin" />
+
+        <Button
+            android:id="@+id/confirmButton"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:backgroundTint="#318409"
+            android:onClick="onConfirmButtonClick"
+            android:text="Hoàn thành"
+            android:textSize="12dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.945"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/servicelistRecycleView"
+            app:layout_constraintVertical_bias="0.404"
+            tools:ignore="MissingConstraints">
+
+        </Button>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

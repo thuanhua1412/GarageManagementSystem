@@ -1,0 +1,226 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="pickedCar"
+            type="com.example.dataclasses.Car" />
+
+        <variable
+            name="pickedService"
+            type="com.example.dataclasses.ServiceItem" />
+    </data>
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context="customer.homepage.booking.BookingFragment">
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/background_color">
+
+
+                <androidx.core.widget.NestedScrollView
+
+                    android:id="@+id/scrollView2"
+                    android:layout_width="411dp"
+                    android:layout_height="610dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/dark_gray_focus_background"
+                        android:orientation="vertical"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/th_ng_tin_x"
+                            style="@style/material_heading_style"
+                            android:drawableLeft="@drawable/one"
+                            android:gravity="center"
+                            android:text="Thông tin xe" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="2dp"
+                            android:layout_marginStart="13dp"
+                            android:layout_marginLeft="13dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="13dp"
+                            android:background="@color/grey_text_on_dark_back_ground" />
+
+                        <!--                    <TextView-->
+                        <!--                        android:id="@+id/car_id"-->
+                        <!--                        android:layout_width="215dp"-->
+                        <!--                        android:layout_height="40dp"-->
+                        <!--                        android:layout_marginStart="50dp"-->
+                        <!--                        android:layout_marginLeft="50dp"-->
+                        <!--                        android:gravity="center_vertical"-->
+                        <!--                        android:text="Biển "-->
+                        <!--                        android:textAppearance="@style/minor_heading_booking" />-->
+
+                        <!--                    <com.google.android.material.textfield.TextInputEditText-->
+                        <!--                        android:id="@+id/picking_car_edit_text"-->
+                        <!--                        style="@style/form_edit_text_booking"-->
+                        <!--                        android:hint="Chọn xe để phục vụ"-->
+                        <!--                        app:layout_constraintEnd_toEndOf="parent"-->
+                        <!--                        app:layout_constraintStart_toStartOf="parent"-->
+                        <!--                        app:layout_constraintTop_toBottomOf="@+id/login_text"-->
+                        <!--                        android:text="@{pickedCar.registrationPlate}"/>-->
+
+                        <androidx.appcompat.widget.AppCompatSpinner
+                            android:id="@+id/pick_car_spinner"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/fui_transparent" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/service_pick_text_title"
+                            style="@style/material_heading_style"
+                            android:layout_marginTop="40dp"
+                            android:drawableLeft="@drawable/two"
+                            android:text="Chọn dịch vụ" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="2dp"
+                            android:layout_marginStart="13dp"
+                            android:layout_marginLeft="13dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="13dp"
+                            android:background="@color/grey_text_on_dark_back_ground" />
+
+                        <!--                    <TextView-->
+                        <!--                        android:id="@+id/pick_service_type_title"-->
+                        <!--                        android:layout_width="215dp"-->
+                        <!--                        android:layout_height="40dp"-->
+                        <!--                        android:layout_marginStart="50dp"-->
+                        <!--                        android:layout_marginLeft="50dp"-->
+                        <!--                        android:gravity="center_vertical"-->
+                        <!--                        android:text="Loại dịch vụ"-->
+                        <!--                        android:textAppearance="@style/minor_heading_booking" />-->
+
+                        <!--                    <com.google.android.material.textfield.TextInputEditText-->
+                        <!--                        android:id="@+id/picking_service_edit_text"-->
+                        <!--                        style="@style/form_edit_text_booking"-->
+                        <!--                        android:hint="Chọn loại hình dịch vụ"-->
+                        <!--                        app:layout_constraintEnd_toEndOf="parent"-->
+                        <!--                        app:layout_constraintStart_toStartOf="parent"-->
+                        <!--                        app:layout_constraintTop_toBottomOf="@+id/login_text"-->
+                        <!--                        android:text="@{pickedService.name}"/>-->
+                        <androidx.appcompat.widget.AppCompatSpinner
+                            android:id="@+id/pick_service_spinner"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:background="@color/fui_transparent" />
+
+                        <!--                    <TextView-->
+                        <!--                        android:id="@+id/pick_time_limit_title"-->
+                        <!--                        android:layout_width="wrap_content"-->
+                        <!--                        android:layout_height="40dp"-->
+                        <!--                        android:layout_marginStart="50dp"-->
+                        <!--                        android:layout_marginLeft="50dp"-->
+                        <!--                        android:gravity="center_vertical"-->
+                        <!--                        android:text="Giới hạn thời gian"-->
+                        <!--                        android:textAppearance="@style/minor_heading_booking" />-->
+
+                        <!--                    <com.google.android.material.textfield.TextInputEditText-->
+                        <!--                        android:id="@+id/pick_time_limit_edit_text"-->
+                        <!--                        style="@style/form_edit_text_booking"-->
+                        <!--                        android:hint="Chọn mức giới hạn"-->
+                        <!--                        app:layout_constraintEnd_toEndOf="parent"-->
+                        <!--                        app:layout_constraintStart_toStartOf="parent"-->
+                        <!--                        app:layout_constraintTop_toBottomOf="@+id/login_text"-->
+                        <!--                        android:text="@{pickedService.timeLimit}"/>-->
+
+
+                        <TextView
+                            android:id="@+id/pick_time_to_pass_car"
+                            style="@style/material_heading_style"
+                            android:layout_marginTop="30dp"
+                            android:drawableLeft="@drawable/three"
+                            android:text="Thời điểm giao xe" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="2dp"
+                            android:layout_marginStart="13dp"
+                            android:layout_marginLeft="13dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="13dp"
+                            android:background="@color/grey_text_on_dark_back_ground" />
+
+                        <!--                    <TextView-->
+                        <!--                        android:id="@+id/pick_car_arrive_time_title"-->
+                        <!--                        android:layout_width="215dp"-->
+                        <!--                        android:layout_height="40dp"-->
+                        <!--                        android:layout_marginStart="50dp"-->
+                        <!--                        android:layout_marginLeft="50dp"-->
+                        <!--                        android:gravity="center_vertical"-->
+                        <!--                        android:text="Giao xe vào:"-->
+                        <!--                        android:textAppearance="@style/minor_heading_booking" />-->
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/filledTextField4"
+
+                            style="@style/material_edit_text_box"
+
+                            android:hint="Thời điểm giao xe">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/pick_car_arrive_time_edit_text"
+                                style="@style/material_edit_text"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/login_text"
+                                tools:text="sample text" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/filledTextField6"
+
+                            style="@style/material_edit_text_box"
+
+                            android:hint="Description">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/addtional_notes_edit_text"
+                                style="@style/material_edit_text"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/login_text"
+                                tools:text="sample text"/>
+                        </com.google.android.material.textfield.TextInputLayout>
+
+
+                    </LinearLayout>
+                </androidx.core.widget.NestedScrollView>
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/finish_fab"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="40dp"
+                    android:layout_marginRight="40dp"
+                    android:layout_marginBottom="70dp"
+                    android:contentDescription="Hoàn tất"
+                    android:foregroundGravity="right|bottom"
+                    app:backgroundTint="@color/reddish_button_color"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:srcCompat="@drawable/ic_baseline_check_24" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </FrameLayout>
+
+
+</layout>

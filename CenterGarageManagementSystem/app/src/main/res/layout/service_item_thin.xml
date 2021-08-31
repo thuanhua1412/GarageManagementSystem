@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="service"
+            type="com.example.centergaragemanagementsystem.dataClass.Service" />
+        <variable
+            name="clickListener"
+            type="com.example.centergaragemanagementsystem.adapter.ServiceClickListener" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/background_color"
+        android:layout_marginStart="22dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        app:cardCornerRadius="10dp"
+        android:clickable="true"
+        android:onClick="@{() -> clickListener.onClick(service)}"
+        app:cardBackgroundColor="#303030">
+
+        <FrameLayout
+            android:id="@+id/serviceItemThin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#1f1d1f"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/serviceImage"
+                android:layout_width="120dp"
+                android:layout_height="110dp"
+                android:src="@drawable/service" />
+
+            <TextView
+                android:id="@+id/text_view1"
+                android:layout_width="217dp"
+                android:layout_height="21dp"
+                android:layout_marginLeft="120dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="Roboto"
+                android:text="@{`Dịch vụ: ` + service.name}"
+                android:textColor="@android:color/white"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/text_view2"
+                android:layout_width="217dp"
+                android:layout_height="21dp"
+                android:layout_marginLeft="120dp"
+                android:fontFamily="Roboto"
+                android:layout_marginTop="32dp"
+                android:text="@{`Mô tả dịch vụ: ` + service.description}"
+                android:textColor="@android:color/white"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/text_view3"
+                android:layout_width="217dp"
+                android:layout_height="21dp"
+                android:layout_marginLeft="120dp"
+                android:layout_marginTop="54dp"
+                android:fontFamily="Roboto"
+                android:text="@{`Thời gian thực hiện: ` + service.timeLimit}"
+                android:textColor="@android:color/white"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/text_view4"
+                android:layout_width="217dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="120dp"
+                android:layout_marginTop="76dp"
+                android:fontFamily="Roboto"
+                android:text=""
+                android:textColor="@android:color/white"
+                android:textSize="12sp" />
+
+            <ImageView
+                android:id="@+id/statusImage"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="270dp"
+                android:layout_marginTop="3dp"
+                android:src="@drawable/status_pending" />
+
+            <Button
+                android:id="@+id/btnDone"
+                android:layout_width="80dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="270dp"
+                android:textSize="10sp"
+                android:backgroundTint="#318409"
+                android:layout_marginTop="73dp"
+                android:text="Xong" />
+
+            <!--            <CheckBox-->
+<!--                android:id="@+id/checkbox_item"-->
+<!--                android:layout_width="40dp"-->
+<!--                android:layout_height="40dp"-->
+<!--                android:layout_marginLeft="300dp"-->
+<!--                android:layout_marginTop="30dp"-->
+<!--                android:onClick="onCheckboxClicked" />-->
+
+
+        </FrameLayout>
+
+    </androidx.cardview.widget.CardView>
+</layout>

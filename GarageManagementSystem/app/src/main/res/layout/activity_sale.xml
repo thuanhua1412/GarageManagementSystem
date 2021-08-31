@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color"
+    tools:context="appinfo.TermOfServicePage">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar"/>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="654dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+
+            <TextView
+                android:id="@+id/gold_customer"
+                style="@style/heading_app_info"
+                android:layout_marginStart="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20sp"
+                android:text="Gold Customer"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/gold_customer_detail"
+                style="@style/app_info_detail_elaboration"
+                android:text="@string/gold_cus"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/gold_customer" />
+
+            <TextView
+                android:id="@+id/silver_customer"
+                style="@style/heading_app_info"
+                android:layout_marginStart="20dp"
+                android:layout_marginLeft="20dp"
+                android:text="Silver Customer"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/gold_customer_detail" />
+
+            <TextView
+                android:id="@+id/silver_customer_detail"
+                style="@style/app_info_detail_elaboration"
+                android:text="@string/silver_cus"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/silver_customer" />
+
+            <TextView
+                android:id="@+id/bronze_customer"
+                style="@style/heading_app_info"
+                android:layout_marginStart="20dp"
+                android:layout_marginLeft="20dp"
+                android:text="Bronze Custom"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/silver_customer_detail" />
+
+            <TextView
+                android:id="@+id/bronze_custome_dettail"
+                style="@style/app_info_detail_elaboration"
+                android:text="@string/bronze_cus"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/bronze_customer" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

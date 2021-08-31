@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="home_screen_button">
+        <item name="android:background">@drawable/dark_gray_focus_background</item>
+        <item name="android:layout_width">154dp</item>
+        <item name="android:layout_height">140dp</item>
+        <item name="android:layout_margin">10dp</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:textSize">10sp</item>
+    </style>
+
+    <style name="th_ng_tin_x">
+
+        <item name="android:textSize">
+            29sp
+        </item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">
+            #C4C4C4
+        </item>
+    </style>
+
+    <style name="headings_booking">
+        <item name="android:textSize">
+            29sp
+        </item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">
+            #C4C4C4
+        </item>
+        <item name="android:drawablePadding">10dp</item>
+        <item name="textStartPadding">10dp</item>
+        <item name="android:layout_width">293dp</item>
+        <item name="android:layout_height">42dp</item>
+        <item name="android:layout_alignParentLeft">true</item>
+        <item name="android:layout_alignParentTop">true</item>
+        <item name="android:layout_marginLeft">20dp</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:drawableLeft">@drawable/one</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+
+    <style name="minor_heading_booking">
+
+        <item name="android:textSize">
+            31sp
+        </item>
+
+        <item name="android:textColor">
+            #BFBFBF
+        </item>
+
+    </style>
+
+    <style name="form_edit_text_booking">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">70dp</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:layout_marginStart">20dp</item>
+        <item name="android:layout_marginEnd">20dp</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:background">@drawable/grey_form_background</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:paddingStart">30dp</item>
+        <item name="android:textColor">@color/grey_text_on_dark_back_ground</item>
+        <item name="android:textColorHint">@color/grey_text_on_dark_back_ground</item>
+        <item name="android:paddingLeft">30dp</item>
+    </style>
+
+    <style name="login_register_form">
+        <item name="android:layout_width">300dp</item>
+        <item name="android:layout_height">56dp</item>
+        <item name="android:background">@drawable/grey_form_background</item>
+        <item name="android:gravity">center_horizontal|center_vertical</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textColor">@color/grey_text_on_dark_back_ground</item>
+        <item name="android:textColorHint">@color/grey_text_on_dark_back_ground</item>
+        <item name="android:layout_marginTop">20dp</item>
+    </style>
+
+    <style name="heading_app_info">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">50sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="app_info_detail_elaboration">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingStart">20dp</item>
+        <item name="android:paddingEnd">20dp</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="car_item_title">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">26dp</item>
+        <item name="android:layout_marginLeft">35dp</item>
+        <item name="android:layout_marginTop">7dp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_marginStart">35dp</item>
+    </style>
+
+    <style name="material_text_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_below">@+id/service_item_name</item>
+        <item name="android:layout_margin">7dp</item>
+        <item name="android:layout_marginTop">5dp</item>
+    </style>
+
+    <style name="material_heading_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_below">@+id/service_item_name</item>
+        <item name="android:layout_margin">7dp</item>
+        <item name="android:textSize">22dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_marginTop">5dp</item>
+        <item name="android:drawablePadding">10dp</item>
+        <item name="textStartPadding">10dp</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+<!--    "@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"-->
+
+
+    <style name="material_edit_text_box" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">32dp</item>
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:layout_marginEnd">32dp</item>
+        <item name="android:layout_marginBottom">8dp</item>
+    </style>
+
+    <style name="material_edit_text">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+</resources>

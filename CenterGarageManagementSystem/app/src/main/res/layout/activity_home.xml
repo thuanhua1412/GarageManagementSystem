@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="Employee"
+            type="com.example.centergaragemanagementsystem.dataClass.Manager" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#B3000000"
+        tools:context=".activity.HomeActivity">
+
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar"
+            app:layout_constraintBottom_toTopOf="@+id/imageView4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="411dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar"
+            app:srcCompat="@drawable/background_1_" />
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/scroll_table_parent"
+            android:layout_width="match_parent"
+            android:layout_height="540dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="13dp"
+            android:fillViewport="true"
+            android:isScrollContainer="true"
+            android:orientation="vertical"
+            android:scrollbars="vertical|none"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView4">
+
+            <LinearLayout
+                android:id="@+id/table_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginRight="5dp"
+                android:foregroundGravity="center_horizontal"
+                android:gravity="center_horizontal"
+                android:isScrollContainer="true"
+                android:orientation="vertical">
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center">
+
+                    <Button
+                        android:id="@+id/btnProfile"
+                        style="@style/home_screen_button"
+                        android:layout_width="184dp"
+                        android:layout_height="161dp"
+                        android:layout_gravity="center_vertical"
+                        android:drawableTop="@drawable/employees_1"
+                        android:text="Hồ sơ"
+                        app:backgroundTint="#1F1D1F"
+                        tools:layout_editor_absoluteX="161dp"
+                        tools:layout_editor_absoluteY="252dp" />
+
+                    <Button
+                        android:id="@+id/noti_button"
+                        style="@style/home_screen_button"
+                        android:layout_width="184dp"
+                        android:layout_height="161dp"
+                        android:drawableTop="@drawable/notification_2"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
+                        android:text="Thông báo"
+                        app:backgroundTint="#1F1D1F"
+                        tools:layout_editor_absoluteX="40dp"
+                        tools:layout_editor_absoluteY="258dp" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center">
+
+                    <Button
+                        android:id="@+id/btnNhanXe"
+                        style="@style/home_screen_button"
+                        android:layout_width="184dp"
+                        android:layout_height="161dp"
+                        android:drawableTop="@drawable/nh_n_xe"
+                        android:paddingTop="24dp"
+                        android:text="Nhận xe"
+                        app:backgroundTint="#1F1D1F" />
+
+                    <Button
+                        android:id="@+id/btnLichHen"
+                        style="@style/home_screen_button"
+                        android:layout_width="184dp"
+                        android:layout_height="161dp"
+                        android:drawableTop="@drawable/group"
+                        android:text="Lịch hẹn chờ duyệt"
+                        app:backgroundTint="#1F1D1F" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_horizontal"
+                    android:gravity="center">
+
+                    <Button
+                        android:id="@+id/xe_dang_sua_button"
+                        style="@style/home_screen_button"
+                        android:layout_width="184dp"
+                        android:layout_height="161dp"
+                        android:drawableTop="@drawable/car_1__2"
+                        android:text="Xe đang sửa chữa"
+                        app:backgroundTint="#1F1D1F" />
+
+                    <Button
+                        android:id="@+id/customer_button"
+                        style="@style/home_screen_button"
+                        android:layout_width="184dp"
+                        android:layout_height="161dp"
+                        android:drawableTop="@drawable/customer_1"
+                        android:text="Khách hàng"
+                        app:backgroundTint="#1F1D1F" />
+                </TableRow>
+
+                <!--        <TableRow-->
+                <!--            android:layout_width="match_parent"-->
+                <!--            android:layout_height="match_parent" />-->
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <ImageView
+            android:id="@+id/avatar_image"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="55dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar"
+            android:src="@{Employee.avatarURI}"
+            app:error="@{@drawable/car_service_sunderland_1}" />
+
+        <TextView
+            android:id="@+id/employee_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="140dp"
+            android:layout_marginLeft="140dp"
+            android:layout_marginTop="55dp"
+            android:fontFamily="@font/roboto_medium"
+            android:text="@{Employee.name}"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+        <TextView
+            android:id="@+id/employee_position"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="140dp"
+            android:layout_marginLeft="140dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/roboto_medium"
+            android:text="@{Employee.position}"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/employee_name" />
+
+        <TextView
+            android:id="@+id/textView31"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/roboto_medium"
+            android:text="|"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@+id/employee_position"
+            app:layout_constraintTop_toBottomOf="@id/employee_name" />
+
+        <TextView
+            android:id="@+id/textView32"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/roboto_medium"
+            android:text="EID:"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@+id/textView31"
+            app:layout_constraintTop_toBottomOf="@id/employee_name" />
+
+        <TextView
+            android:id="@+id/employee_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="3dp"
+            android:layout_marginLeft="3dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/roboto_medium"
+            android:text="@{Employee.EID}"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@+id/textView32"
+            app:layout_constraintTop_toBottomOf="@id/employee_name" />
+
+        <TextView
+            android:id="@+id/employee_mail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="140dp"
+            android:layout_marginLeft="140dp"
+            android:layout_marginTop="3dp"
+            android:text="@{Employee.email}"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/employee_position" />
+
+        <ImageButton
+            android:id="@+id/ibAvatar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="80dp"
+            android:layout_marginLeft="80dp"
+            android:layout_marginTop="110dp"
+            android:background="@drawable/rounded_btn"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar"
+            app:srcCompat="@drawable/camera_1" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

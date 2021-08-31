@@ -1,0 +1,41 @@
+<resources>
+    <string name="app_name">CenterGarageManagementSystem</string>
+    <string name="welcome">Welcome</string>
+    <string name="client_app_description_text">Mazda Service kết nối nhanh chóng, tiện lợi, mọi yêu cầu của Khách hàng đến với dịch vụ chăm sóc Khách hàng của thương hiệu Mazda tại Việt Nam</string>
+    <string name="ng_nh_p">Đăng nhập |</string>
+    <string name="register_text">Tạo tài khoản mới</string>
+    <string name="email_ho_c_t_n_t_i_kho_n">email hoặc tên tài khoản</string>
+    <string name="remember_password_text">Nhớ mật khẩu cho lần đăng nhập sau</string>
+    <string name="continue_text">Tiếp tục</string>
+    <string name="forgot_password_prompt_text">Quên mật khẩu ?</string>
+    <string name="customer_info">&#160; Thông tin khách hàng</string>
+    <string name="full_name">Họ và tên</string>
+    <string name="name_hint">&#160;&#160;&#160; &#160;  Nguyễn Văn A</string>
+    <string name="phone_number">Số điện thoại</string>
+    <string name="phone_hint">&#160;&#160;&#160; &#160; 0918294122</string>
+    <string name="email">Email</string>
+    <string name="email_hint">&#160;&#160;&#160; &#160; nguyenvana@gmail.com</string>
+    <string name="choose_service">Chọn dịch vụ</string>
+    <string name="s_a_ch_a_chung">Sửa chữa chung</string>
+    <string name="b_o_h_nh">Bảo hành</string>
+    <string name="note">Ghi chú</string>
+    <string name="note_hint">&#160;&#160;&#160; &#160; Ghi chú</string>
+    <string name="car_info">&#160;Thông tin xe</string>
+    <string name="complete">Hoàn tất</string>
+    <string name="car_model">Mẫu xe</string>
+    <string name="customerName">Khách hàng: %s</string>
+    <string name="customerPhone">Số điện thoại: %s</string>
+    <string name="numberOfServiceTime">Số lần đã sửa: %s</string>
+    <string name="customerRank">Loại khách hàng: %s</string>
+    <string name="m_t_kh_u">mật khẩu</string>
+    <string name="car_image">car image</string>
+    <string-array name="car_model" style="@style\mySpinnerItemStyle">
+        <item>&#160;&#160;&#160; &#160; Chọn mẫu xe</item>
+        <item>&#160;&#160;&#160; &#160; Vios</item>
+        <item>&#160;&#160;&#160; &#160; Camry</item>
+        <item>&#160;&#160;&#160; &#160; Innova</item>
+        <item>&#160;&#160;&#160; &#160; Fortuner</item>
+        <item>&#160;&#160;&#160; &#160; Wigo</item>
+        <item>&#160;&#160;&#160; &#160; Khác</item>
+    </string-array>
+</resources>

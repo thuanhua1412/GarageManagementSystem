@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name = "carItem"
+            type = "com.example.dataclasses.Car"
+            />
+        <variable
+            name="clickListener"
+            type="customer.homepage.clientinfo.carinfo.CarClickListener" />
+    </data>
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginLeft="5sp"
+        android:layout_marginTop="5sp"
+        android:layout_marginRight="5sp"
+        android:layout_marginBottom="5sp"
+        app:cardBackgroundColor="#080C0C"
+
+        app:cardCornerRadius="10dp">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/biensoxe"
+                style="@style/car_item_title"
+                android:text="@string/bi_n_s_xe"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/car_plate_id_text"
+                android:layout_width="wrap_content"
+                android:layout_height="19dp"
+                android:layout_marginStart="15sp"
+                android:layout_marginLeft="15sp"
+                android:text="@{carItem.registrationPlate}"
+                android:textColor="@color/reddish_button_color"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                tools:text="68X111111"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/biensoxe" />
+
+            <ImageView
+                android:id="@+id/carImage"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginStart="28dp"
+                android:layout_marginLeft="28dp"
+                android:src="@{carItem.carImageURI}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/car_plate_id_text"
+                app:error="@{@drawable/car}"
+                android:contentDescription="@string/todo" />
+
+            <Button
+                android:id="@+id/login_button"
+                android:layout_width="141dp"
+                android:layout_height="40dp"
+                android:layout_margin="8dp"
+                android:background="@drawable/reddish_button_background"
+                android:text="@string/chi_ti_t"
+                app:backgroundTint="@color/reddish_button_color"
+                app:cornerRadius="30dp"
+                android:fontFamily="@font/roboto_thin"
+                app:iconTint="#FFFFFF"
+                android:onClick="@{()->clickListener.onClick(carItem)}"
+                app:layout_constraintBottom_toTopOf="@+id/car_type_title_text"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guide_line_below_plate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toBottomOf="@id/car_plate_id_text" />
+
+            <TextView
+                android:id="@+id/car_type_title_text"
+                style="@style/car_item_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/h_ng_xe"
+                app:layout_constraintStart_toEndOf="@id/carImage"
+                app:layout_constraintTop_toBottomOf="@id/guide_line_below_plate" />
+
+            <TextView
+                android:id="@+id/car_type_text"
+                style="@style/car_item_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:text= "@{carItem.type}"
+                app:layout_constraintStart_toEndOf="@id/car_type_title_text"
+                app:layout_constraintTop_toBottomOf="@id/guide_line_below_plate" />
+
+            <TextView
+                android:id="@+id/pickup_location_title_text"
+                style="@style/car_item_title"
+                android:text="@string/n_i_nh_n"
+                android:textSize="18sp"
+                app:layout_constraintStart_toEndOf="@id/vertical_guideline"
+                app:layout_constraintTop_toBottomOf="@id/car_type_title_text" />
+
+            <TextView
+                android:id="@+id/pickup_location_text"
+                style="@style/car_item_title"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:text="@string/trung_t_m_1"
+                android:textSize="18sp"
+                app:layout_constraintStart_toEndOf="@id/pickup_location_title_text"
+                app:layout_constraintTop_toBottomOf="@id/car_type_title_text" />
+
+            <TextView
+                android:id="@+id/car_description_title_text"
+                style="@style/car_item_title"
+                android:text="@string/xe_c_a"
+                app:layout_constraintStart_toEndOf="@id/vertical_guideline"
+                app:layout_constraintTop_toBottomOf="@id/pickup_location_title_text" />
+
+            <TextView
+                style="@style/car_item_title"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:text="@{carItem.ownerID}"
+                app:layout_constraintStart_toEndOf="@id/car_description_title_text"
+                app:layout_constraintTop_toBottomOf="@id/pickup_location_title_text" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/vertical_guideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintStart_toEndOf="@id/carImage" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</layout>

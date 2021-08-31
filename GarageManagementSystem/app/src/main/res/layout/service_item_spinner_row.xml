@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="serviceItem"
+            type="com.example.dataclasses.ServiceItem" />
+        <!--        <variable-->
+        <!--            name="repairingServiceIcon"-->
+        <!--            type="android.R.drawable"-->
+        <!--            app:srcCompat="@drawable/ic_baseline_settings_24"-->
+        <!--            />-->
+        <!--        <variable-->
+        <!--            name="washingServiceIcon"-->
+        <!--            type="android.R.drawable"-->
+        <!--            app:srcCompat="@drawable/ic_baseline_local_car_wash_24"-->
+        <!--            />-->
+
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:layout_margin="15dp"
+            android:background="@color/cardview_dark_background"
+            android:padding="4dp">
+
+            <ImageView
+                android:id="@+id/service_item_icon"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignBottom="@id/service_item_name"
+                android:layout_marginBottom="7dp"
+                tools:src="@drawable/ic_baseline_settings_24"
+                android:src='@{serviceItem.type =="cleaning" ? @drawable/ic_baseline_local_car_wash_24 : @drawable/ic_baseline_settings_24 }' />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/service_item_name"
+                android:layout_width="280dp"
+                android:layout_height="wrap_content"
+
+                android:layout_marginStart="9dp"
+                android:layout_marginLeft="9dp"
+                android:layout_marginEnd="59dp"
+                android:layout_marginRight="59dp"
+                android:layout_toEndOf="@+id/service_item_icon"
+                android:layout_toRightOf="@+id/service_item_icon"
+                android:gravity="center_horizontal"
+                android:text="@{serviceItem.name}"
+                android:textColor="@color/reddish_button_color"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                tools:text="SERVICE NAME" />
+
+            <com.google.android.material.checkbox.MaterialCheckBox
+                android:id="@+id/checkbox"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignBottom="@id/service_item_name"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginEnd="20dp"
+                android:layout_marginRight="20dp" />
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/service_description_title_text"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:text="Description: "
+                style="@style/material_text_style" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/service_description_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/service_item_name"
+                android:layout_alignBaseline="@id/service_description_title_text"
+                android:layout_alignBottom="@id/service_description_title_text"
+                android:layout_toEndOf="@id/service_description_title_text"
+                android:layout_toRightOf="@id/service_description_title_text"
+                android:text="@{serviceItem.description}"
+                tools:text="Do thing better" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/time_limit_title_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@id/fake_view"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginStart="7dp"
+                android:layout_marginLeft="7dp"
+                android:layout_marginBottom="10dp"
+                android:text="Time Limit:" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/time_limit_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@id/fake_view"
+                android:layout_alignBaseline="@id/time_limit_title_text"
+                android:layout_margin="7dp"
+                android:layout_marginBottom="10dp"
+                android:layout_toEndOf="@+id/time_limit_title_text"
+                android:layout_toRightOf="@+id/time_limit_title_text"
+                android:text="@{serviceItem.timeLimit}"
+                tools:text="1 hours" />
+
+            <TextView
+                android:id="@id/fake_view"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_above="@id/service_cost_title_text"
+                android:layout_marginBottom="30dp"
+                android:background="@color/colorAccent"
+                android:textColor="@color/white" />
+
+            <Button
+                android:id="@+id/add_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentBottom="true"
+                android:padding="5dp"
+                android:text="Add" />
+
+            <Button
+                android:id="@+id/remove_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/add_button"
+                android:layout_toRightOf="@id/add_button"
+                android:padding="5dp"
+                android:text="Remove" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/service_cost_title_text"
+                android:layout_width="58dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_toEndOf="@id/remove_button"
+                android:layout_toRightOf="@id/remove_button"
+                android:layout_marginLeft="10dp"
+                android:text="Cost: "
+                android:textColor="@color/white"
+                android:textSize="22sp" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/service_cost_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/fake_view"
+                android:layout_marginStart="15dp"
+
+                android:layout_marginLeft="15dp"
+                android:layout_toEndOf="@id/service_cost_title_text"
+                android:layout_toRightOf="@id/service_cost_title_text"
+                android:text="@{Integer.toString(serviceItem.cost)}"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                tools:text="15000" />
+        </RelativeLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+</layout>

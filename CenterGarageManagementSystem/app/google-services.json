@@ -1,0 +1,114 @@
+{
+  "project_info": {
+    "project_number": "683078241722",
+    "firebase_url": "https://autogaragemanagementsystem-default-rtdb.firebaseio.com",
+    "project_id": "autogaragemanagementsystem",
+    "storage_bucket": "autogaragemanagementsystem.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:683078241722:android:e0f0da0c6263f9a45b6183",
+        "android_client_info": {
+          "package_name": "com.example.centergaragemanagementsystem"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "683078241722-pgmdv4b4kj5744jfp1afg6lhiu9mstt4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBNZIutG2HiyF4_IsEvTk_evyE6H37Zc-Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "683078241722-hrggkhnpfoj66m2ktgnuna3t7eqfgk0d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:683078241722:android:32b7c85ca39ae5cf5b6183",
+        "android_client_info": {
+          "package_name": "com.example.dataclasses"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "683078241722-a53jlobqoctkopptf2eids06c0p9d5ba.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.dataclasses",
+            "certificate_hash": "ee5bfcdf79e5b6950cb7b1b756eae0389fe5607e"
+          }
+        },
+        {
+          "client_id": "683078241722-pgmdv4b4kj5744jfp1afg6lhiu9mstt4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBNZIutG2HiyF4_IsEvTk_evyE6H37Zc-Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "683078241722-hrggkhnpfoj66m2ktgnuna3t7eqfgk0d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:683078241722:android:d9dab6ab8a9fb4525b6183",
+        "android_client_info": {
+          "package_name": "com.example.garagemanagementsystem"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "683078241722-v93206rmhtk8slrviofg7kpq4bm06g9f.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.garagemanagementsystem",
+            "certificate_hash": "ee5bfcdf79e5b6950cb7b1b756eae0389fe5607e"
+          }
+        },
+        {
+          "client_id": "683078241722-pgmdv4b4kj5744jfp1afg6lhiu9mstt4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBNZIutG2HiyF4_IsEvTk_evyE6H37Zc-Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "683078241722-hrggkhnpfoj66m2ktgnuna3t7eqfgk0d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
